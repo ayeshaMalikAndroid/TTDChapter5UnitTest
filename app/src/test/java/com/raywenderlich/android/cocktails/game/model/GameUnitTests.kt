@@ -42,11 +42,12 @@ class GameUnitTests {
         val game = Game()
         // 3 Call the method that you want to test
         game.incrementScore()
+        game.incrementScore()
         // 4 first parameter is the expected value, and the second parameter is the
         //actual value.
         Assert.assertEquals(
             "Current score should have been 1",
-            1, game.currentScore
+            2, game.currentScore
         )
     }
 
