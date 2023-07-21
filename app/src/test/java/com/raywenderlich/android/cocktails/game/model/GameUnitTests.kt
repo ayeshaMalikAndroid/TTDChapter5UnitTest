@@ -35,29 +35,33 @@ import org.junit.Test
 
 class GameUnitTests {
 
-        // 1 @Test annotation. This will tell JUnit that this method is a test.
-        @Test
-        fun whenIncrementingScore_shouldIncrementCurrentScore() {
-            // 2 Create an instance of the Game class — the one that will be tested.
-            val game = Game()
-            // 3 Call the method that you want to test
-            game.incrementScore()
-            // 4 first parameter is the expected value, and the second parameter is the
-            //actual value.
-            Assert.assertEquals("Current score should have been 1",
-                1, game.currentScore)
-        }
+    // 1 @Test annotation. This will tell JUnit that this method is a test.
+    @Test
+    fun whenIncrementingScore_shouldIncrementCurrentScore() {
+        // 2 Create an instance of the Game class — the one that will be tested.
+        val game = Game()
+        // 3 Call the method that you want to test
+        game.incrementScore()
+        // 4 first parameter is the expected value, and the second parameter is the
+        //actual value.
+        Assert.assertEquals(
+            "Current score should have been 1",
+            1, game.currentScore
+        )
+    }
 
     @Test
-    fun whenIncrementingScore_aboveHighScore_shouldAlsoIncrementHighScore(){
+    fun whenIncrementingScore_aboveHighScore_shouldAlsoIncrementHighScore() {
         val game = Game()
         game.incrementScore()
-        Assert.assertEquals(1,game.highestScore)
+        Assert.assertEquals(1, game.highestScore)
     }
 
 
-
-
-
-
+    @Test
+    fun whenIncrementingScore_belowHighScore_shouldNotIncrementHighScore() {
+        val game = Game(10)
+        game.incrementScore()
+        Assert.assertEquals(10, game.highestScore)
     }
+}
