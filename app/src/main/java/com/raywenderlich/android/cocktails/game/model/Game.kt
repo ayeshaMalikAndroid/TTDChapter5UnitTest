@@ -31,10 +31,12 @@
 package com.raywenderlich.android.cocktails.game.model
 
 class Game {
+    var highestScore = 0
     var currentScore = 0
         private set
     fun incrementScore() {
         // No implementation yet
         currentScore++
+        highestScore++
     }
 }
