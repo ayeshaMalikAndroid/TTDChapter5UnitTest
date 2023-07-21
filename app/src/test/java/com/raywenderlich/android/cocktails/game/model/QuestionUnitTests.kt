@@ -35,5 +35,9 @@ import org.junit.Before
 import org.junit.Test
 
 class QuestionUnitTests {
-
+    @Test
+    fun whenCreatingQuestion_shouldNotHaveAnsweredOption(){
+        val question = Question("CORRECT" , "INCORRECT")
+        Assert.assertNull(question..answeredOption)
+    }
 }

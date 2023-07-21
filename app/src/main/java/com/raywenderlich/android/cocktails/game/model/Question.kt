@@ -30,5 +30,5 @@
 
 package com.raywenderlich.android.cocktails.game.model
 
-class Question (){
-}
+//class Question (){
+//}
