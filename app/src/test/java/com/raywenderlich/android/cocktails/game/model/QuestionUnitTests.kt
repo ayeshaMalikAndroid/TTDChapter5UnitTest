@@ -54,4 +54,12 @@ class QuestionUnitTests {
         val result = question.answer("INCORRECT")
         Assert.assertFalse(result)
     }
+    //@Test annotation allows to expect an exception
+    //If that exception occurs, the test will pass. This will save you from writing try/catch.
+
+    @Test(expected = IllegalArgumentException::class)
+    fun whenAnswering_withInvalidOption_shouldThrowException() {
+        val question = Question("CORRECT", "INCORRECT")
+        question.answer("INVALID")
+    }
 }
