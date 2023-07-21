@@ -38,6 +38,6 @@ class QuestionUnitTests {
     @Test
     fun whenCreatingQuestion_shouldNotHaveAnsweredOption(){
         val question = Question("CORRECT" , "INCORRECT")
-        Assert.assertNull(question..answeredOption)
+        Assert.assertNull(question.answeredOption)
     }
 }

@@ -30,5 +30,7 @@
 
 package com.raywenderlich.android.cocktails.game.model
 
-//class Question (){
-//}
+class Question (val correctOption:String , val inCorrectOption :String){
+     var answeredOption :String?="Answer"
+    private set
+}
