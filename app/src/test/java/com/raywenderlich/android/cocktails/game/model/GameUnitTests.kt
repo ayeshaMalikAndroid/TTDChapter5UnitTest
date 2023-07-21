@@ -35,14 +35,15 @@ import org.junit.Test
 
 class GameUnitTests {
 
-        // 1
+        // 1 @Test annotation. This will tell JUnit that this method is a test.
         @Test
         fun whenIncrementingScore_shouldIncrementCurrentScore() {
-            // 2
+            // 2 Create an instance of the Game class — the one that will be tested.
             val game = Game()
-            // 3
+            // 3 Call the method that you want to test
             game.incrementScore()
-            // 4
+            // 4 first parameter is the expected value, and the second parameter is the
+            //actual value.
             Assert.assertEquals("Current score should have been 1",
                 1, game.currentScore)
         }
