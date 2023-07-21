@@ -35,12 +35,14 @@ class Question(
     val incorrectOption: String
 ) {
     var answeredOption: String? = null
-        private set
+    val isAnsweredCorrectly: Boolean
+        get() = correctOption == answeredOption
+     //   private set
 
     fun answer(option: String) :Boolean {
         if (option != correctOption && option != incorrectOption)
             throw IllegalArgumentException("Not a valid option")
         answeredOption = option
-        return correctOption == answeredOption
+        return isAnsweredCorrectly
     }
 }

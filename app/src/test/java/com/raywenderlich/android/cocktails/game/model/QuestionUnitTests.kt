@@ -35,22 +35,27 @@ import org.junit.Before
 import org.junit.Test
 
 class QuestionUnitTests {
+    private lateinit var question: Question
+    @Before
+    fun setUp(){
+        question = Question("CORRECT", "INCORRECT")
+    }
     @Test
     fun whenCreatingQuestion_shouldNotHaveAnsweredOption() {
-        val question = Question("CORRECT", "INCORRECT")
+       // val question = Question("CORRECT", "INCORRECT")
         question.answer("INCORRECT")
         Assert.assertEquals("INCORRECT", question.answeredOption)
     }
     @Test
     fun whenAnswering_withCorrectOption_shouldReturnTrue() {
-        val question = Question("CORRECT", "INCORRECT")
+        //val question = Question("CORRECT", "INCORRECT")
         val result = question.answer("CORRECT")
         Assert.assertTrue(result)
     }
 
     @Test
     fun whenAnswering_withIncorrectOption_shouldReturnFalse() {
-        val question = Question("CORRECT", "INCORRECT")
+        //val question = Question("CORRECT", "INCORRECT")
         val result = question.answer("INCORRECT")
         Assert.assertFalse(result)
     }
@@ -59,7 +64,7 @@ class QuestionUnitTests {
 
     @Test(expected = IllegalArgumentException::class)
     fun whenAnswering_withInvalidOption_shouldThrowException() {
-        val question = Question("CORRECT", "INCORRECT")
+       // val question = Question("CORRECT", "INCORRECT")
         question.answer("INVALID")
     }
 }
