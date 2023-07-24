@@ -31,31 +31,38 @@
 package com.raywenderlich.android.cocktails.game.model
 
 import org.junit.Assert
+import org.junit.Before
 import org.junit.Test
 
 class GameUnitTests {
+    lateinit var gameRefactor: Game
+
+    @Before
+    fun setUp() {
+        gameRefactor = Game()
+    }
 
     // 1 @Test annotation. This will tell JUnit that this method is a test.
     @Test
     fun whenIncrementingScore_shouldIncrementCurrentScore() {
         // 2 Create an instance of the Game class — the one that will be tested.
-        val game = Game()
+        //  val game = Game()
         // 3 Call the method that you want to test
-        game.incrementScore()
-        game.incrementScore()
+        gameRefactor.incrementScore()
+        gameRefactor.incrementScore()
         // 4 first parameter is the expected value, and the second parameter is the
         //actual value.
         Assert.assertEquals(
             "Current score should have been 1",
-            2, game.currentScore
+            2, gameRefactor.currentScore
         )
     }
 
     @Test
     fun whenIncrementingScore_aboveHighScore_shouldAlsoIncrementHighScore() {
-        val game = Game()
-        game.incrementScore()
-        Assert.assertEquals(1, game.highestScore)
+        // val game = Game()
+        gameRefactor.incrementScore()
+        Assert.assertEquals(1, gameRefactor.highestScore)
     }
 
 

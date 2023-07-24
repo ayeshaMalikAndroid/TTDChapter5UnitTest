@@ -30,14 +30,16 @@
 
 package com.raywenderlich.android.cocktails.game.model
 
-class Game(highest: Int = 0){
+class Game(highest: Int = 0) {
     var highestScore = highest
     var currentScore = 0
+        //set method private
         private set
+
     fun incrementScore() {
         // No implementation yet
         currentScore++
-        if(currentScore > highestScore)
-        highestScore = currentScore
+        if (currentScore > highestScore)
+            highestScore = currentScore
     }
 }

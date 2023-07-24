@@ -30,6 +30,7 @@
 
 package com.raywenderlich.android.cocktails.game.model
 
+import org.junit.After
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -38,7 +39,9 @@ class QuestionUnitTests {
     private lateinit var question: Question
     @Before
     fun setUp(){
+        println("SetUp.")
         question = Question("CORRECT", "INCORRECT")
+
     }
     @Test
     fun whenCreatingQuestion_shouldNotHaveAnsweredOption() {
@@ -66,5 +69,9 @@ class QuestionUnitTests {
     fun whenAnswering_withInvalidOption_shouldThrowException() {
        // val question = Question("CORRECT", "INCORRECT")
         question.answer("INVALID")
+    }
+    @After
+    fun tearDown(){
+        println("tear down.")
     }
 }
